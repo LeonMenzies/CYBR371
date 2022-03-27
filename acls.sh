@@ -16,3 +16,4 @@ setfacl -m g:Receptionists:rwx /opt/WellingtonClinic/patients
 
 #Setting file ACLs
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic
+setfacl -m g:Administrators:rwx /opt/WellingtonClinic
