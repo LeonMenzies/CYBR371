@@ -19,7 +19,7 @@ read visit_reason
 echo -n "Medication: "
 read medication
 
-echo -n "Instrcutions: "
+echo -n "Instructions: "
 read instructions
 
 #Create username
