@@ -1,5 +1,6 @@
-!# /user/bin/basg
+#! /user/bin/bash
 
+#Collect information
 echo "Patient name:"
 read patient_name
 
