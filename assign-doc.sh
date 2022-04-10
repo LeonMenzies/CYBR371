@@ -4,7 +4,7 @@
 echo -n "Patient name: "
 read patient_name
 
-echo -n "Patient birthdate (DD/MM/YYY): "
+echo -n "Patient birthdate (DD/MM/YYYY): "
 read patient_birthday
 
 echo -n "Doctors username: "
