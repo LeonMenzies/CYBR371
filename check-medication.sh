@@ -13,7 +13,7 @@ username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${
 #Convert string to array
 #mapfile -t -d ',' arr < ../patients/${username,,}/pmedicalrecord.log
 
-echo "Doctor            Medication"
+echo "Doctor          Medication"
 
 while read p; do
     IFS=',' read -r -a arr <<< $p
