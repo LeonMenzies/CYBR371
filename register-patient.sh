@@ -24,7 +24,7 @@ read registered_doctors
 #Create the username
 username="${first_name:0:1}${last_name:`expr "$last_name" : '.*'`-1:1}${dob///}"
 
-#Method for making a directory andfile for each patient 
+#Method for making a directory and files for each patient 
 make_patient(){
     mkdir /opt/WellingtonClinic/patients/$1
     echo -n $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
