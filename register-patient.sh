@@ -7,7 +7,7 @@ echo -n "Last name: "
 read last_name
 echo -n "Date of birth (DD/MM/YYY): "
 read dob
-echo - "Gender: "
+echo -n "Gender: "
 read gender
 echo -n "Physical address: "
 read physical_address
