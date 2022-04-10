@@ -12,4 +12,4 @@ read assigned_doctor
 
 username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${patient_birthday///}"
 
-echo -n ","+=$assigned_doctor >> /opt/WellingtonClinic/patients/$username/pbasicinfo.log
+echo -n ",${assigned_doctor}" >> /opt/WellingtonClinic/patients/$username/pbasicinfo.log
