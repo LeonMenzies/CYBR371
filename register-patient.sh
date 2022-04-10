@@ -1,21 +1,21 @@
 #! /user/bin/bash
 
 #Collect information
-echo -n "First name:"
+echo -n "First name: "
 read first_name
-echo "Last name:"
+echo -n "Last name: "
 read last_name
-echo "Date of birth (DD/MM/YYY):"
+echo -n "Date of birth (DD/MM/YYY): "
 read dob
-echo "Gender:"
+echo - "Gender: "
 read gender
-echo "Physical address:"
+echo -n "Physical address: "
 read physical_address
-echo "Email:"
+echo -n "Email: "
 read email
-echo "Phone number:"
+echo -n "Phone number: "
 read phone_number
-echo "Registered doctors (enter username seperated by comma (,):"
+echo -n "Registered doctors (enter username seperated by comma (,): "
 read registered_doctors
 
 # Need to implement doctors not being able to add themselves as a registered
@@ -27,7 +27,7 @@ username="${first_name:0:1}${last_name:`expr "$last_name" : '.*'`-1:1}${dob///}"
 #Method for making a directory andfile for each patient 
 make_patient(){
     mkdir /opt/WellingtonClinic/patients/$1
-    echo $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
+    echo -n $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
 }
 
 make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$phone_number,$registered_doctors"
