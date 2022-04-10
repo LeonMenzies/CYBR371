@@ -28,6 +28,7 @@ username="${first_name:0:1}${last_name:`expr "$last_name" : '.*'`-1:1}${dob///}"
 make_patient(){
     mkdir /opt/WellingtonClinic/patients/$1
     echo -n $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
+    touch /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
 }
 
 make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$phone_number,$registered_doctors"
