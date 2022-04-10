@@ -16,7 +16,7 @@ username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${
 echo "Doctor     Medication"
 
 while read p; do
-    IFS=', ' read -r -a arr <<< $p
+    IFS=',' read -r -a arr <<< $p
     echo "${arr[1]}        ${arr[4]}"
 
 done <WellingtonClinic/patients/${username,,}/pmedicalrecord.log
