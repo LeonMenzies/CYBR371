@@ -11,9 +11,8 @@ read patient_birthday
 username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${patient_birthday///}"
 
 #Convert string to array
-mapfile -t arr < /WellingtonClinic/patients/${username,,}/pbasicinfo.log
+mapfile -t -d ',' arr < WellingtonClinic/patients/${username,,}/pbasicinfo.log
 
 #Print results
-echo "Patient             Doctors"
-echo $patient_name
-echo ${arr[@]:8}
+echo "Patient                Doctors"
+echo "${arr[@]::2}        ${arr[@]:7}"
