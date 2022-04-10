@@ -1,13 +1,13 @@
 #! /user/bin/bash
 
 #Collect information
-echo "Patient name:"
+echo -n "Patient name: "
 read patient_name
 
-echo "Patient birthdate (DD/MM/YYY):"
+echo -n "Patient birthdate (DD/MM/YYY): "
 read patient_birthday
 
-echo "Doctors username:"
+echo -n "Doctors username: "
 read assigned_doctor
 
 username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${patient_birthday///}"
