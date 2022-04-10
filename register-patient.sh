@@ -1,7 +1,7 @@
 #! /user/bin/bash
 
 #Collect information
-echo "First name:"
+echo -n "First name:"
 read first_name
 echo "Last name:"
 read last_name
@@ -30,4 +30,4 @@ make_patient(){
     echo $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
 }
 
-make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$registered_doctors"
+make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$phone_number,$registered_doctors"
