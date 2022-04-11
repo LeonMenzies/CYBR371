@@ -4,9 +4,9 @@ echo -n "Doctors username: "
 read doc_username
 
 #Get the doctors name
-mapfile -t -d ',' arr1 < /opt/WellingtonClinic/staff/doctors/sbasicinfo.log
+mapfile -t -d ',' arr1 < /opt/WellingtonClinic/staff/doctors/$doc_username/sbasicinfo.log
 
-echo "Doctor             Patients"
+echo "Doctor                     Patients"
 
 echo -n "${arr1[1]}($doc_username)           "
 
