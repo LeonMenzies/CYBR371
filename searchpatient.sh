@@ -6,7 +6,7 @@ read doc_username
 #Get the doctors name
 mapfile -t -d ',' arr1 < /opt/WellingtonClinic/staff/doctors/$doc_username/sbasicinfo.log
 
-echo "Doctor                     Patients"
+echo "Doctor                          Patients"
 
 echo -n "${arr1[0]}($doc_username)           "
 
