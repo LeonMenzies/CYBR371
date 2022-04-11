@@ -24,8 +24,8 @@ IFS="," read -a arr1 <<< $registered_doctors
 for d in ${arr1[@]}; do
 
     mapfile -t -d ',' arr2 < /opt/WellingtonClinic/staff/doctors/$d/sbasicinfo.log
-    
-    if [ "${arr[0]}" = "$first_name $last_name" ]; then
+
+    if [[ "${arr2[0]} ${arr2[1]}" == "$first_name $last_name $dob" ]]; then
         echo "Patient cannot be ther own doctor"
     fi
 done
