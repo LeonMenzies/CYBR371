@@ -32,3 +32,9 @@ make_patient(){
 }
 
 make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$phone_number,$registered_doctors"
+
+IFS="," read -a rdoctorsarray <<< $registered_doctors
+
+for d in ${rdoctorsarray[@]}; do
+    setfacl -m u:$d rw /opt/WellingtonClinic/patients/$username/pmedicalrecord.log
+done
