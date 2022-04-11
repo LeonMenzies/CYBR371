@@ -3,8 +3,12 @@
 echo -n "Doctors username: "
 read doc_username
 
+#Get the doctors name
+mapfile -t -d ',' arr1 < /opt/WellingtonClinic/staff/doctors/sbasicinfo.log
+
 echo "Doctor             Patients"
-echo -n "${doc_username}           "
+
+echo -n "${arr1[1]}($doc_username)           "
 
 #Iterate each patient
 for d in /opt/WellingtonClinic/patients/*; do
@@ -12,8 +16,8 @@ for d in /opt/WellingtonClinic/patients/*; do
     if grep -q $doc_username $d/pbasicinfo.log ; then
     
     #print hte patients names
-    mapfile -t -d ',' arr < $d/pbasicinfo.log
-    echo -n "${arr[@]::2},"
+    mapfile -t -d ',' arr2 < $d/pbasicinfo.log
+    echo -n "${arr2[@]::2},"
     fi
 done
 echo
