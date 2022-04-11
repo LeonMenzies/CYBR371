@@ -29,6 +29,17 @@ make_patient(){
     mkdir /opt/WellingtonClinic/patients/$1
     echo -n $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
     touch /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    
+    #Set acls
+    setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1/pbasicinfo.log
+    setfacl -m g:Doctors:r-- /opt/WellingtonClinic/patients/$1/pbasicinfo.log
+    setfacl -m g:Nurses:r-- /opt/WellingtonClinic/patients/$1/pbasicinfo.log
+    setfacl -m g:Receptionists:rw- /opt/WellingtonClinic/patients/$1/pbasicinfo.log
+    
+    setfacl -m g:Administrators:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    setfacl -m g:Doctors:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    setfacl -m g:Nurses:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    setfacl -m g:Receptionists:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
 }
 
 make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$registered_doctors"
