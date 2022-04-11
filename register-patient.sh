@@ -31,7 +31,7 @@ make_patient(){
     touch /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
 }
 
-make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$phone_number,$registered_doctors"
+make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$registered_doctors"
 
 IFS="," read -a rdoctorsarray <<< $registered_doctors
 
