@@ -9,11 +9,17 @@ groupadd Administrators
 #Function for adding a user and their information
 add_user(){
 
-useradd -g $3 $1
+    useradd -g $3 $1
 
-mkdir /opt/WellingtonClinic/staff/$2/$1 
+    mkdir /opt/WellingtonClinic/staff/$2/$1 
 
-echo $4 >> /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
+    echo $4 >> /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
+
+    #Set acls
+    setfacl -m g:Administrators:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
+    setfacl -m g:Doctors:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
+    setfacl -m g:Nurses:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
+    setfacl -m g:Receptionists:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
 
 }
 
