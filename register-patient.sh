@@ -18,8 +18,19 @@ read phone_number
 echo -n "Registered doctors (enter username seperated by comma (,): "
 read registered_doctors
 
-# Need to implement doctors not being able to add themselves as a registered
-# doctor to their own patient file
+
+#Check the patient is not the same as the assigned doctor
+IFS="," read -a arr1 <<< $registered_doctors
+for d in ${arr1[@]}; do
+
+    mapfile -t -d ',' arr2 < /opt/WellingtonClinic/staff/doctors/$d/sbasicinfo.log
+    
+    if [ "${arr[0]}" = "$first_name $last_name" ]; then
+        echo "Patient cannot be ther own doctor"
+    fi
+done
+
+
 
 #Create the username
 username="${first_name:0:1}${last_name:`expr "$last_name" : '.*'`-1:1}${dob///}"
