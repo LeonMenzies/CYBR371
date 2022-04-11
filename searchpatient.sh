@@ -8,7 +8,7 @@ mapfile -t -d ',' arr1 < /opt/WellingtonClinic/staff/doctors/$doc_username/sbasi
 
 echo "Doctor                     Patients"
 
-echo -n "${arr1[1]}($doc_username)           "
+echo -n "${arr1[0]}($doc_username)           "
 
 #Iterate each patient
 for d in /opt/WellingtonClinic/patients/*; do
