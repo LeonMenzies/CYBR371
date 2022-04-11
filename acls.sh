@@ -34,19 +34,19 @@ setfacl -m g:Administrators:rwx /opt/WellingtonClinic/scripts/check-medication.s
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic/scripts/audit.sh
 
 #UnRegisteredDoctors
-setfacl -m g:UnRegisteredDoctors:r-- /opt/WellingtonClinic/scripts/sbasicinfo.log
-setfacl -m g:UnRegisteredDoctors:r-- /opt/WellingtonClinic/scripts/pbasicinfo.log
-setfacl -m g:UnRegisteredDoctors:rw- /opt/WellingtonClinic/scripts/pmedicalrecord.log
-setfacl -m g:UnRegisteredDoctors:--- /opt/file-system-setup.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/staff-create.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/acls.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/register-patient.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/assign-doc.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/search-patient.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/search-doctor.sh
-setfacl -m g:UnRegisteredDoctors:r-x /opt/WellingtonClinic/scripts/visit.sh
-setfacl -m g:UnRegisteredDoctors:r-- /opt/WellingtonClinic/scripts/check-medication.sh
-setfacl -m g:UnRegisteredDoctors:--- /opt/WellingtonClinic/scripts/audit.sh
+setfacl -m g:Doctors:r-- /opt/WellingtonClinic/scripts/sbasicinfo.log
+setfacl -m g:Doctors:r-- /opt/WellingtonClinic/scripts/pbasicinfo.log
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/pmedicalrecord.log
+setfacl -m g:Doctors:--- /opt/file-system-setup.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/staff-create.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/acls.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/register-patient.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/assign-doc.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/search-patient.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/search-doctor.sh
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/scripts/visit.sh
+setfacl -m g:Doctors:r-- /opt/WellingtonClinic/scripts/check-medication.sh
+setfacl -m g:Doctors:--- /opt/WellingtonClinic/scripts/audit.sh
 
 #Nurses
 setfacl -m g:Nurses:r-- /opt/WellingtonClinic/scripts/sbasicinfo.log
