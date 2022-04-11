@@ -18,4 +18,4 @@ while read p; do
     IFS=',' read -r -a arr <<< $p
     echo "${arr[1]}        ${arr[3]}"
 
-done </optWellingtonClinic/patients/${username,,}/pmedicalrecord.log
+done </opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
