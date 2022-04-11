@@ -3,9 +3,7 @@
 #Setting ownership
 chown -R Administrator:group /opt/WellingtonClinic
 
-
 #Setting directory ACLs
-
 #Administrators
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic/scripts
@@ -19,9 +17,7 @@ setfacl -m g:Administrators:rwx /opt/WellingtonClinic/staff/doctors
 #Receptionists
 setfacl -m g:Receptionists:rwx /opt/WellingtonClinic/patients
 
-
 #Setting file ACLs
-
 #Administrators
 setfacl -m g:Administrators:rwx /opt/file-system-setup.sh
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic/scripts/staff-create.sh
@@ -57,7 +53,6 @@ setfacl -m g:Nurses:--- /opt/WellingtonClinic/scripts/search-doctor.sh
 setfacl -m g:Nurses:--- /opt/WellingtonClinic/scripts/visit.sh
 setfacl -m g:Nurses:r-x /opt/WellingtonClinic/scripts/check-medication.sh
 setfacl -m g:Nurses:--- /opt/WellingtonClinic/scripts/audit.sh
-
 
 #Receptionists
 setfacl -m g:Receptionists:--- /opt/file-system-setup.sh
