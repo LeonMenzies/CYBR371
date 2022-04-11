@@ -65,8 +65,8 @@ setfacl -m g:Receptionists:--- /opt/WellingtonClinic/scripts/staff-create.sh
 setfacl -m g:Receptionists:--- /opt/WellingtonClinic/scripts/acls.sh
 setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/scripts/register-patient.sh
 setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/scripts/assign-doc.sh
-setfacl -m g:Receptionists:--- /opt/WellingtonClinic/scripts/search-patient.sh
-setfacl -m g:Receptionists:--- /opt/WellingtonClinic/scripts/search-doctor.sh
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/scripts/search-patient.sh
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/scripts/search-doctor.sh
 setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/scripts/visit.sh
 setfacl -m g:Receptionists:--- /opt/WellingtonClinic/scripts/check-medication.sh
 setfacl -m g:Receptionists:--- /opt/WellingtonClinic/scripts/audit.sh
