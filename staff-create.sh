@@ -11,12 +11,6 @@ add_user(){
 
     #Add the user 
     useradd -g $3 $1
-
-    #Set there passwords
-    passwd $1
-    
-    echo 123
-    echo 123
     
     mkdir /opt/WellingtonClinic/staff/$2/$1 
 
