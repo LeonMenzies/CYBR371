@@ -1,7 +1,7 @@
 #! user/bin/bash
 
 #Setting ownership
-chown -R Administrator:group /opt/WellingtonClinic
+chown -R :Administrators /opt/WellingtonClinic
 
 #Setting directory ACLs
 #Administrators
