@@ -17,8 +17,36 @@ setfacl -m g:Administrators:rwx /opt/WellingtonClinic/staff/nurses
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic/staff/receptionists
 setfacl -m g:Administrators:rwx /opt/WellingtonClinic/staff/doctors
 
+#Doctors
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/scripts
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/patients
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/staff
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/staff/administrators
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/staff/nurses
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/staff/receptionists
+setfacl -m g:Doctors:r-x /opt/WellingtonClinic/staff/doctors
+
+#Nurses
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/scripts
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/patients
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/staff
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/staff/administrators
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/staff/nurses
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/staff/receptionists
+setfacl -m g:Nurses:r-x /opt/WellingtonClinic/staff/doctors
+
 #Receptionists
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/scripts
 setfacl -m g:Receptionists:rwx /opt/WellingtonClinic/patients
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/staff
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/staff/administrators
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/staff/nurses
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/staff/receptionists
+setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/staff/doctors
+
 
 #Setting file ACLs
 #Administrators
