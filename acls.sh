@@ -1,7 +1,10 @@
-#! user/bin/bash
+#! usr/bin/bash
 
 #Setting ownership
 chown -R :Administrators /opt/WellingtonClinic
+
+#Set defaults to nothing
+chmod -R 000 /opt/WellingtonClinic 
 
 #Setting directory ACLs
 #Administrators
