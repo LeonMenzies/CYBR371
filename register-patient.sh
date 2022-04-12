@@ -46,9 +46,9 @@ make_patient(){
     
     #Set folder permissions
     setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1
-    setfacl -m g:Administrators:r-x /opt/WellingtonClinic/patients/$1
-    setfacl -m g:Administrators:r-x /opt/WellingtonClinic/patients/$1
-    setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1
+    setfacl -m g:Doctors:r-x /opt/WellingtonClinic/patients/$1
+    setfacl -m g:Nurses:r-x /opt/WellingtonClinic/patients/$1
+    setfacl -m g:Receptionists:rwx /opt/WellingtonClinic/patients/$1
     
     #Set acls
     setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1/pbasicinfo.log
