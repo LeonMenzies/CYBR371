@@ -18,6 +18,12 @@ add_user(){
 
     #Remove default permissions
     chmod -R 000 /opt/WellingtonClinic/staff/$2/$1
+    
+    #Set folder permissions
+    setfacl -m g:Administrators:rwx /opt/WellingtonClinic/staff/$2/$1 
+    setfacl -m g:Doctors:r-x /opt/WellingtonClinic/staff/$2/$1 
+    setfacl -m g:Nurses:r-x /opt/WellingtonClinic/staff/$2/$1 
+    setfacl -m g:Receptionists:r-x /opt/WellingtonClinic/staff/$2/$1 
 
     #Set acls
     setfacl -m g:Administrators:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
