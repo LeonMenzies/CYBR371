@@ -16,12 +16,15 @@ add_user(){
 
     echo $4 >> /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
 
+    #Remove default permissions
+    chmod -R 000 /opt/WellingtonClinic/staff/$2/$1
+
     #Set acls
     setfacl -m g:Administrators:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
     setfacl -m g:Doctors:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
     setfacl -m g:Nurses:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
     setfacl -m g:Receptionists:r-- /opt/WellingtonClinic/staff/$2/$1/sbasicinfo.log
-
+    
 }
 
 #Add each user
