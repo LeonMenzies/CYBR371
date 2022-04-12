@@ -22,8 +22,17 @@ read medication
 echo -n "Instructions: "
 read instructions
 
+
 #Create username
 username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${patient_birthday///}"
 
-#Insert the visit info into the log file
-echo "$today_date,$doctor,$visit_reason,$medication,$instructions" >> /opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
+if ! grep -q $doctor "/opt/WellingtonClinic/patients/${username,,}/pbasicinfo.log" ;
+then
+    echo "Doctor is not registered to the Patient"
+else
+    #Insert the visit info into the log file
+    echo "$today_date,$doctor,$visit_reason,$medication,$instructions" >> /opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
+fi
+
+
+
