@@ -58,7 +58,7 @@ make_patient(){
     
     setfacl -m g:Administrators:rw- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     setfacl -m g:Doctors:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
-    setfacl -m g:Nurses:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    setfacl -m g:Nurses:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     setfacl -m g:Receptionists:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     
     
