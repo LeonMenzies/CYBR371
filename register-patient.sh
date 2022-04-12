@@ -41,6 +41,15 @@ make_patient(){
     echo -n $2 >> /opt/WellingtonClinic/patients/$1/pbasicinfo.log
     touch /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     
+    #Remove default permissions
+    chmod -R 000 /opt/WellingtonClinic/patients/$1
+    
+    #Set folder permissions
+    setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1
+    setfacl -m g:Administrators:r-x /opt/WellingtonClinic/patients/$1
+    setfacl -m g:Administrators:r-x /opt/WellingtonClinic/patients/$1
+    setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1
+    
     #Set acls
     setfacl -m g:Administrators:rwx /opt/WellingtonClinic/patients/$1/pbasicinfo.log
     setfacl -m g:Doctors:r-- /opt/WellingtonClinic/patients/$1/pbasicinfo.log
@@ -51,6 +60,8 @@ make_patient(){
     setfacl -m g:Doctors:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     setfacl -m g:Nurses:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     setfacl -m g:Receptionists:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    
+    
 }
 
 make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$registered_doctors"
