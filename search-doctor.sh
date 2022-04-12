@@ -15,4 +15,4 @@ mapfile -t -d ',' arr < /opt/WellingtonClinic/patients/${username,,}/pbasicinfo.
 
 #Print results
 echo "Patient                Doctors"
-echo "${arr[@]::2}        ${arr[@]:7}"
+echo "${arr[@]::2}        ${arr[@]:6}"
