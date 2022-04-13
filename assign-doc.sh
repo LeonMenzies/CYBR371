@@ -16,7 +16,7 @@ username="${patient_name:0:1}${patient_name:`expr "$patient_name" : '.*'`-1:1}${
 echo -n ",${assigned_doctor}" >> /opt/WellingtonClinic/patients/${username,,}/pbasicinfo.log
 
 #Set the doctors acl permissions
-setfacl -m u:$assigned_doctor:rw /opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
+setfacl -m u:$assigned_doctor:rw- /opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
 
 #Log the permission change
-echo "${username},pmedicalrecord.log,rw-,{date}," >> /opt/WellingtonClinic/scripts/audit.log
+echo "${assigned_doctor},pmedicalrecord.log,rw-,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
