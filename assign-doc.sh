@@ -19,4 +19,5 @@ echo -n ",${assigned_doctor}" >> /opt/WellingtonClinic/patients/${username,,}/pb
 setfacl -m u:$assigned_doctor:rw- /opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
 
 #Log the permission change
-echo "${assigned_doctor},pmedicalrecord.log,rw-,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
+echo "${USER},pmedicalrecord.log,rw-,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
+
