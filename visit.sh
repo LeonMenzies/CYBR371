@@ -32,6 +32,8 @@ then
 else
     #Insert the visit info into the log file
     echo "$today_date,$doctor,$visit_reason,$medication,$instructions" >> /opt/WellingtonClinic/patients/${username,,}/pmedicalrecord.log
+    #log the write
+    echo "${USER},pmedicalrecord.log,write,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
 fi
 
 
