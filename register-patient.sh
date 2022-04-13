@@ -58,10 +58,13 @@ make_patient(){
     
     setfacl -m g:Administrators:rw- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     setfacl -m g:Doctors:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
-    setfacl -m g:Nurses:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
+    setfacl -m g:Nurses:r-- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     setfacl -m g:Receptionists:--- /opt/WellingtonClinic/patients/$1/pmedicalrecord.log
     
-    
+    #Log object creation
+    echo "$(USER),${1},patient object creation,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
+    echo "$(USER),pmedicalrecord.log,rw-,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
+    echo "$(USER),pbasicinfo.log,rw-,$(date '+%Y-%m-%d')," >> /opt/WellingtonClinic/scripts/audit.log
 }
 
 make_patient ${username,,} "$first_name,$last_name,$dob,$gender,$physical_address,$email,$registered_doctors"
